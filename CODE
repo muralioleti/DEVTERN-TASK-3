@@ -1,0 +1,42 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Step 1: Data Loading and Exploration
+
+# Load the historical dataset
+df = pd.read_csv('/content/drive/MyDrive/foot_ulcer (alx) - DL/monthly_deaths.csv')  # Replace with your dataset filename
+
+# Display basic information about the dataset
+print(df.info())
+
+# Display the first few records of the dataset
+print(df.head())
+
+# Step 2: Analysis of the Relationship Between Variables Over Different Periods
+
+# Visualize the relationship between births, deaths, and handwashing over time
+sns.set(style="whitegrid")
+plt.figure(figsize=(12, 6))
+
+sns.lineplot(x='date', y='deaths', data=df)
+plt.title('Deaths Over Time')
+plt.xlabel('Date')
+plt.ylabel('Deaths')
+plt.show()
+
+# Step 3: Calculations to Compare Mortality Rates Before and After Handwashing Implementation
+
+# Calculate average deaths before and after handwashing
+avg_deaths_before = df['deaths'].mean()
+avg_deaths_before = df['deaths'].mean()
+
+# Step 4: Data Visualizations Illustrating the Impact of Handwashing on Reducing Mortality Rates
+
+# Create a bar plot to compare average deaths before and after handwashing
+plt.figure(figsize=(8, 5))
+
+
+plt.title('Impact of Handwashing on Deaths')
+plt.ylabel('Average Deaths')
+plt.show()
